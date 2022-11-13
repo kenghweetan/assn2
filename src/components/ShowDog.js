@@ -1,41 +1,50 @@
-import React from "react";
-
+import React, { useState } from "react";
 import Resource from "./Resource";
 import "./card.css";
+import DogCard from "./DogCard";
+import Loader from "./Loader";
+import PaginatedItems from "./Pagination";
 
 const Showdog = () => {
-  const webURL =
-    "https://api.thedogapi.com/v1/images/search?has_breeds=true&limit=25";
+  const webURL = "https://dog.ceo/api/breeds/image/random/60";
 
-  const [toolTipState]
+  /*   const [isVisible, setIsVisible] = useState(false); */
   const render = (data) => {
-    if (data.loading === true) return <p>loading ...</p>;
-
-    console.log("Got the data", data);
-
-    return data.trans.map((dog) => (
-      <div className="card" onMouseOut={} key={dog.id}>
-        <div className="card-content">
-          <div className="card-front">
-            <img className="image" src={dog.url} alt="dog img" />
+    if (data.loading) return;
+    <PaginatedItems
+      items={Array(60)
+        .fill(
+          <div className="wrapper">
+            <Loader />
           </div>
-          <div className="card-back">
-            <h1>
-              {`Hi, I'm 
-              ${dog.breeds[0].name.match(/^[aeiouAEIOU]/gm) ? "an" : "a"}
-              ${dog.breeds[0].name}`}
-            </h1>
-            <p>{`I am ${dog.breeds[0].temperament}`}</p>
+        )
+        .map((loader) => loader)}
+      itemsPerPage={6}
+    />;
+    return (
+      <PaginatedItems
+        items={data.trans.map((dog) => (
+          <div className="wrapper">
+            <DogCard dog={dog} />
           </div>
-        </div>
+        ))}
+        itemsPerPage={6}
+      />
+    );
+    /*     
+
+    console.log("Got the data", data); */
+
+    /*     return data.trans.map((dog) => (
+      <div className="wrapper">
+        <DogCard dog={dog} />
       </div>
-    ));
+    )); */
   };
 
   return (
     <div>
       <Resource path={webURL} render={render} />
-      <div>ToolTip</div>
     </div>
   );
 };

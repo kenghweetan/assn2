@@ -1,16 +1,13 @@
 import React from "react";
-
 import Header from "./components/Header";
-import ShowDog from "./components/ShowDog";
-
 import "./App.css";
+import Showdog from "./components/ShowDog";
 
 const App = () => {
   return (
     <div className="container">
       <Header />
-
-      <ShowDog />
+      <Showdog />
     </div>
   );
 };

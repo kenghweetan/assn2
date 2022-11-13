@@ -18,14 +18,13 @@ const Resource = ({ path, render }) => {
       const result = await axios.get(path, {
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": process.env.REACT_APP_APIKEY,
         },
       });
 
       console.log(" result ", result);
 
       const newData = {
-        trans: result.data,
+        trans: [...result.data.message],
         loading: false,
         error: null,
       };
@@ -41,7 +40,7 @@ const Resource = ({ path, render }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div className="showlist">{render(state)}</div>;
+  return <div>{render(state)}</div>;
 };
 
 export default Resource;

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
 import { BsHouse } from "react-icons/bs";
-
 import Modal from "react-modal";
+import WithToolTip from "./ToolTip";
 
 const customStyles = {
   content: {
@@ -36,14 +35,18 @@ const Header = () => {
       <div id="navbar">
         <ul className="navlink">
           <li href="#">
-            <button className="btn btn-refresh" onClick={refreshPage}>
-              refresh
-            </button>
+            <WithToolTip toolTipText={"Load new images"}>
+              <button className="btn btn-refresh" onClick={refreshPage}>
+                refresh
+              </button>
+            </WithToolTip>
           </li>
           <li href="#">
-            <button className="btn" onClick={() => setModalIsOpen(true)}>
-              info
-            </button>
+            <WithToolTip toolTipText={""}>
+              <button className="btn" onClick={() => setModalIsOpen(true)}>
+                info
+              </button>
+            </WithToolTip>
           </li>
         </ul>
       </div>
@@ -56,16 +59,10 @@ const Header = () => {
         <h1>
           Welcome to dog Fun <BsHouse />
         </h1>
-        <h2>hi, wrote this simple Web App for dog lovers. hope you like it.</h2>
         <hr></hr>
-        <h2>Author: Abel Choy</h2>
-        <h2>Contact: abelchoy@gmail.com</h2>
-        <p>Software: ReactJS REST-API</p>
-        <p>Version: 1.0 Aug 2020</p>
+        <h2>Author: Keng Hwee Tan</h2>
+        <h2>Contact: tankenghwee1996@gmail.com</h2>
         <p>Credit Images: api.thedogapi.com</p>
-        <p>p/s:</p>
-        <p>please contact me if you have any suggestions for this App.</p>
-        <p>Do you like to learn Reactjs Programming? please contact me.</p>
         <div>
           <button className="btn" onClick={() => setModalIsOpen(false)}>
             Close

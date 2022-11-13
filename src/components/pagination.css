@@ -1,0 +1,32 @@
+.pagination {
+    justify-content: center;
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    font-weight: 600;
+    font-size: 2rem;
+    padding-inline-start: 0;
+    padding: 10px;
+
+}
+
+.pageLink {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+.activePage,
+.prevLink:hover,
+.nextLink:hover {
+    background-color: white;
+    color: black;
+}
+
+.prevLink,
+.nextLink {
+    display: inline;
+    padding: 10px 20px;
+    border: 1px solid white;
+    cursor: pointer;
+}
