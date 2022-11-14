@@ -1,5 +1,3 @@
-import "./loader.css";
-
 const Loader = () => {
   return <div class="card skeleton-box"></div>;
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { BsHouse } from "react-icons/bs";
+import { BiRefresh } from "react-icons/bi";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import Modal from "react-modal";
 import WithToolTip from "./ToolTip";
 
@@ -11,7 +13,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    backgroundColor: "#264653",
+    backgroundColor: "#2E4E94",
+    borderRadius: "20px",
   },
 };
 
@@ -37,14 +40,17 @@ const Header = () => {
           <li href="#">
             <WithToolTip toolTipText={"Load new images"}>
               <button className="btn btn-refresh" onClick={refreshPage}>
-                refresh
+                <BiRefresh className="btn-icon" />
               </button>
             </WithToolTip>
           </li>
           <li href="#">
-            <WithToolTip toolTipText={""}>
-              <button className="btn" onClick={() => setModalIsOpen(true)}>
-                info
+            <WithToolTip toolTipText={"Contact me"}>
+              <button
+                className="btn btn-info"
+                onClick={() => setModalIsOpen(true)}
+              >
+                <AiOutlineInfoCircle className="btn-icon" />
               </button>
             </WithToolTip>
           </li>
@@ -64,7 +70,10 @@ const Header = () => {
         <h2>Contact: tankenghwee1996@gmail.com</h2>
         <p>Credit Images: api.thedogapi.com</p>
         <div>
-          <button className="btn" onClick={() => setModalIsOpen(false)}>
+          <button
+            className="btn btn-close"
+            onClick={() => setModalIsOpen(false)}
+          >
             Close
           </button>
         </div>

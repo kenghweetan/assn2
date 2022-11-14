@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
-import { BsLock } from "react-icons/bs";
-import "./card.css";
 import Loader from "./Loader";
 import WithToolTip from "./ToolTip";
-import "./toolTip.css";
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);

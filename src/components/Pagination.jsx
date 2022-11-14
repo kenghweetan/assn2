@@ -1,7 +1,5 @@
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
-import "./pagination.css";
-import "../App.css";
 
 // Example items, to simulate fetching from another resources.
 /* const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]; */

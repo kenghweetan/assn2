@@ -1,6 +1,10 @@
 import React from "react";
 import Header from "./components/Header";
-import "./App.css";
+import "./styles/App.css";
+import "./styles/card.css";
+import "./styles/pagination.css";
+import "./styles/toolTip.css";
+import "./styles/loader.css";
 import Showdog from "./components/ShowDog";
 
 const App = () => {

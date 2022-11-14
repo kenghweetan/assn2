@@ -1,8 +1,6 @@
 :root {
-  --primary-color: rgba(4,
-      191,
-      173, 0.75);
-  --overlay-color: rgba(24, 39, 51, 0.85);
+  --primary-color: #7992C7;
+  --overlay-color: rgba(46, 78, 148, 0.58);
   --menu-speed: 0.75s;
 }
 
@@ -19,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   /* background-color: #8648A3; */
-  background-color: rgb(25, 25, 25);
+  background-color: #2E4F94;
   color: whitesmoke;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -45,8 +43,8 @@ body {
 .title {
   font-family: 'Happy Monkey', cursive, 'Helvetica Neue',
     sans-serif;
-  color: #FFEB11;
-  font-size: 2rem;
+  color:#FB9D73;
+  font-size: 5rem;
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
@@ -60,12 +58,13 @@ p {
 }
 
 #navbar {
-  position: absolute;
+  /* position: absolute;
   right: 12px;
   top: -10px;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  padding-top: 1rem;
+  padding-top: 1rem; */
+  text-align: center;
 }
 
 .navlink {
@@ -76,8 +75,6 @@ p {
 
 .navlink li {
   display: inline-block;
-
-
 }
 
 .navlink a {
@@ -94,28 +91,20 @@ p {
   font-size: 1.5rem;
   line-height: 1;
   position: relative;
-  animation: heading;
+  animation: bounce-7;
   animation-duration: 3s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
 
-@keyframes heading {
-  0% {
-    left: -1000px;
-  }
-
-  25% {
-    left: 300px
-  }
-
-  50% {
-    left: -300px;
-  }
-
-  100% {
-    left: 0px;
-  }
+@keyframes bounce-7 {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-100px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
 }
 
 
@@ -123,14 +112,51 @@ p {
   display: inline-block;
   border: none;
   background: var(--primary-color);
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
   color: #fff;
-  padding: 0.75rem 1.5rem;
   margin-top: 1rem;
   transition: opacity 0.25s ease-in-out;
   text-decoration: none;
   margin-right: 1rem;
-  border-radius: 20px;
   cursor: pointer;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.btn-info, .btn-refresh {
+    padding: 5px;
+  border-radius: 50%;
+}
+
+.btn-close {
+  background-color: #FB9D73;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+}
+
+.btn-refresh:hover {
+  animation-name: spin;
+  animation-duration: 1s;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+} 
+
+.btn-icon {
+  height: 3rem;
+  width: 3rem;
+  vertical-align: middle;
 }
 
 .btn:hover {
@@ -141,7 +167,7 @@ p {
 
 .showlist {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
   justify-content: center;
   align-items: center;

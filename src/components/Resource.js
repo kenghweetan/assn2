@@ -12,8 +12,6 @@ const Resource = ({ path, render }) => {
 
   const getData = async () => {
     try {
-      /* const config = ; */
-
       console.log(process.env.REACT_APP_APIKEY);
       const result = await axios.get(path, {
         headers: {
@@ -44,14 +42,3 @@ const Resource = ({ path, render }) => {
 };
 
 export default Resource;
-
-/* 
-data:
-
-breeds: []
-height: 480
-id: "8la"
-url: "https://cdn2.thedogapi.com/images/8la.jpg"
-width: 640
-
-*/
