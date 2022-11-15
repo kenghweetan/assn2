@@ -12,7 +12,6 @@ const Resource = ({ path, render }) => {
 
   const getData = async () => {
     try {
-      console.log(process.env.REACT_APP_APIKEY);
       const result = await axios.get(path, {
         headers: {
           "Content-Type": "application/json",

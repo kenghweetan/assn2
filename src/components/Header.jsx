@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsHouse } from "react-icons/bs";
+import { GiSittingDog } from "react-icons/gi";
 import { BiRefresh } from "react-icons/bi";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import Modal from "react-modal";
@@ -31,7 +31,7 @@ const Header = () => {
     <>
       <div className="title" id="startShow">
         <h1>
-          Fun dog <BsHouse />{" "}
+          Fun dog <GiSittingDog className="icon" />
         </h1>
       </div>
 
@@ -62,13 +62,16 @@ const Header = () => {
         onRequestClose={() => setModalIsOpen(false)}
         style={customStyles}
       >
-        <h1>
-          Welcome to dog Fun <BsHouse />
+        <h1 style={{ textAlign: "center" }}>
+          Welcome to dog Fun{" "}
+          <GiSittingDog
+            style={{ display: "inline-block", verticalAlign: "middle" }}
+          />
         </h1>
         <hr></hr>
         <h2>Author: Keng Hwee Tan</h2>
         <h2>Contact: tankenghwee1996@gmail.com</h2>
-        <p>Credit Images: api.thedogapi.com</p>
+        <p>Credit Images: https://dog.ceo/dog-api/</p>
         <div>
           <button
             className="btn btn-close"

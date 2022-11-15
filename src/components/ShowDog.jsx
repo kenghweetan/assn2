@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Resource from "./Resource";
 import DogCard from "./DogCard";
 import Loader from "./Loader";
@@ -30,15 +30,6 @@ const Showdog = () => {
         itemsPerPage={8}
       />
     );
-    /*     
-
-    console.log("Got the data", data); */
-
-    /*     return data.trans.map((dog) => (
-      <div className="wrapper">
-        <DogCard dog={dog} />
-      </div>
-    )); */
   };
 
   return (

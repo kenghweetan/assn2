@@ -40,14 +40,14 @@ body {
   max-width:70%;
   justify-content: flex-end;
 } */
-.title {
+.title h1 {
   font-family: 'Happy Monkey', cursive, 'Helvetica Neue',
     sans-serif;
-  color:#FB9D73;
+  color: #FB9D73;
   font-size: 5rem;
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 5rem;
 }
 
 p {
@@ -92,19 +92,44 @@ p {
   line-height: 1;
   position: relative;
   animation: bounce-7;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
 
+.icon {
+  display: "inline-block";
+  vertical-align: middle;
+}
+
 @keyframes bounce-7 {
-  0%   { transform: scale(1,1)      translateY(0); }
-  10%  { transform: scale(1.1,.9)   translateY(0); }
-  30%  { transform: scale(.9,1.1)   translateY(-100px); }
-  50%  { transform: scale(1.05,.95) translateY(0); }
-  57%  { transform: scale(1,1)      translateY(-7px); }
-  64%  { transform: scale(1,1)      translateY(0); }
-  100% { transform: scale(1,1)      translateY(0); }
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  10% {
+    transform: scale(1.1, .9) translateY(0);
+  }
+
+  30% {
+    transform: scale(.9, 1.1) translateY(-100px);
+  }
+
+  50% {
+    transform: scale(1.05, .95) translateY(0);
+  }
+
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
 }
 
 
@@ -112,9 +137,9 @@ p {
   display: inline-block;
   border: none;
   background: var(--primary-color);
-      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
   color: #fff;
   margin-top: 1rem;
   transition: opacity 0.25s ease-in-out;
@@ -126,8 +151,9 @@ p {
   height: fit-content;
 }
 
-.btn-info, .btn-refresh {
-    padding: 5px;
+.btn-info,
+.btn-refresh {
+  padding: 5px;
   border-radius: 50%;
 }
 
@@ -151,7 +177,7 @@ p {
   to {
     transform: rotateZ(360deg);
   }
-} 
+}
 
 .btn-icon {
   height: 3rem;
@@ -181,6 +207,11 @@ p {
   object-fit: cover;
 }
 
+@media (max-width: 1280px) {
+  .showlist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 @media (max-width: 992px) {
   .showlist {
@@ -229,13 +260,13 @@ p {
     opacity: 1;
   }
 
-  #navbar {
+  /* #navbar {
     position: absolute;
     right: 1px;
     top: -20px;
     margin-bottom: 1rem;
     margin-top: 1rem;
     padding-top: 1rem;
-  }
+  } */
 
 }

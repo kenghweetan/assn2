@@ -83,7 +83,6 @@ const DogCard = ({
           {renderCardFront()}
           {renderCardBack()}
         </div>
-        <div className="toolTip"></div>
       </div>
     </WithToolTip>
   );
